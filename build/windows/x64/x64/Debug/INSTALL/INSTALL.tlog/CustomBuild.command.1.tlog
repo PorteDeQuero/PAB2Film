@@ -1,0 +1,10 @@
+^D:\TUGAS MDP\SEMESTER 4\PAB 2\PILEM\BUILD\WINDOWS\X64\CMAKEFILES\9BEC0F35674B23B7FC630AEE4428C523\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

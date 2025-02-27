@@ -1,0 +1,1 @@
+ D:\\Tugas\ MDP\\Semester\ 4\\PAB\ 2\\pilem\\.dart_tool\\flutter_build\\74dc637be13a594ebedefccf17a29261\\native_assets.json: 
