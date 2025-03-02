@@ -39,23 +39,32 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Radjanya Pilem',style: GoogleFonts.caveat(
-        color: Colors.white,
+        color: Colors.orange,
         fontSize: 30,
       ), ),
       
-      backgroundColor: Colors.blueGrey[900],
+      backgroundColor: Colors.blueGrey[900
+      ],
       elevation: 0,
       centerTitle: true,
     ),
-    backgroundColor: Colors.orange,
-    body: SingleChildScrollView(
+    body: Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors :[Colors.orange, Colors.orangeAccent],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-      _buildMoviesList("All Movies", _allMovies),
-      _buildMoviesList("Trending Movies", _trendingMovies),
-      _buildMoviesList("Popular Movies", _popularMovies),
+      _buildMoviesList("Seluruh Film", _allMovies),
+      _buildMoviesList("Sedang Trendi", _trendingMovies),
+      _buildMoviesList("Populer Sepanjang Masa", _popularMovies),
         ],
+        ),
       ),
     ),
       );
