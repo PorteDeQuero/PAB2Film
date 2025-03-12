@@ -30,10 +30,32 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens =[
     const HomeScreen(),
     const SearchScreen(),
-    const FavoriteScreen()
+    const FavoriteScreen(),
   ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+  }
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorite'),
+
+        ],
+        currentIndex: _selectedIndex ,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+        backgroundColor: const Color.fromARGB(255, 35, 35, 35),
+        
+      ),
+    );
   }
 }
